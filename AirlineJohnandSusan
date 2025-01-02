@@ -1,0 +1,40 @@
+def get_flight_info(airline, passenger_name):
+  """
+  Gets flight information from the passenger.
+
+  Args:
+    airline: The airline the passenger is flying with.
+    passenger_name: The name of the passenger.
+
+  Returns:
+    A tuple containing the passenger's meal choice and dietary restrictions.
+  """
+  print(f"{passenger_name}, you are flying with {airline} from Atlanta to Bangkok.")
+  meal_choice = input(f"{passenger_name}, please choose your in-flight meal: \n"
+                      "1. Beef and Broccoli\n"
+                      "2. Fish and Chips\n"
+                      "3. Spaghetti\n"
+                      "Enter the number of your choice: ")
+  has_restrictions = input("Do you have any dietary restrictions? (yes/no): ")
+
+  if has_restrictions.lower() == "yes":
+    restrictions = input("Please specify your dietary restrictions: ")
+  else:
+    restrictions = None
+
+  return meal_choice, restrictions
+
+# Get John's flight information
+john_meal, john_restrictions = get_flight_info("United Airlines", "John")
+
+# Get Susan's flight information
+susan_meal, susan_restrictions = get_flight_info("American Airlines", "Susan")
+
+# Print the collected information
+print("\nFlight Information:")
+print(f"John (United Airlines):")
+print(f" - Meal Choice: {john_meal}")
+print(f" - Dietary Restrictions: {john_restrictions}")
+print(f"Susan (American Airlines):")
+print(f" - Meal Choice: {susan_meal}")
+print(f" - Dietary Restrictions: {susan_restrictions}")
